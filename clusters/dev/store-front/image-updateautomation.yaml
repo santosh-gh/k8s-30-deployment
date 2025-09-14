@@ -20,7 +20,7 @@
 #     path: ./clusters/dev/store-front/   # <--- relative path inside your GitHub repo
 
 
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
 metadata:
   name: store-front-image-update
@@ -41,3 +41,7 @@ spec:
   update:
     path: ./clusters/dev/store-front/
     strategy: Setters
+
+
+
+
