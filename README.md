@@ -317,7 +317,8 @@
     --branch=main \
     --path=clusters/dev \
     --personal=true \
-    --private=false
+    --private=false \
+    --components-extra=image-reflector-controller,image-automation-controller
 
     Create a Git repo, if it does not exist and link to your GitHub repo
 
