@@ -1,0 +1,23 @@
+# flux/images/microservice-a-image-updateautomation.yaml
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: store-front-image-update
+  namespace: flux-system
+spec:
+  interval: 1m
+  # Reference the GitRepository resource that flux-system already manages for GitHub
+  checkout:
+    gitRepository:
+      name: flux-system          # created by flux bootstrap
+      namespace: flux-system
+  commit:
+    authorName: santosh-gh
+    authorEmail: santosh.mohapatra25@gmail.com
+    messageTemplate: |
+      chore(images): update {{ .AutomationObject }} to {{ .LatestImage }}
+  update:
+    strategy: Setters
+    path: ./clusters/dev/store-front/   # <--- relative path inside your GitHub repo
+  policy:
+    name: store-front-image-policy   # reference the ImagePolicy to use to pick the new tag
