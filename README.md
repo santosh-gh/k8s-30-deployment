@@ -308,7 +308,7 @@
   Creating a GitHub Personal Access Token (PAT)
 
   export GITHUB_USER='santosh-gh'
-  export GITHUB_REPO='k8s-29-deployment'
+  export GITHUB_REPO='k8s-30-deployment'
   export GITHUB_TOKEN=<pat-token>
 
   flux bootstrap github \
