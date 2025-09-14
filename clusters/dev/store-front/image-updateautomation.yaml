@@ -14,8 +14,7 @@ spec:
   commit:
     authorName: santosh-gh
     authorEmail: santosh.mohapatra25@gmail.com
-    messageTemplate: |
-      chore(images): update {{ .AutomationObject }} to {{ .LatestImage }}
+    messageTemplate: 'Update from ImageUpdateAutomation'
   update:
     strategy: Setters
     path: ./clusters/dev/store-front/   # <--- relative path inside your GitHub repo
