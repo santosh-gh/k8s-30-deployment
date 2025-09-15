@@ -17,10 +17,7 @@ spec:
     commit:
       author:
         name: santosh-gh
-        email: santosh.mohapatra25@gmail.com
-      signingKeySecretRef:      
-        # optional: sign commits
-        name: ""
+        email: santosh.mohapatra25@gmail.com      
     push:
       branch: main
   update:
