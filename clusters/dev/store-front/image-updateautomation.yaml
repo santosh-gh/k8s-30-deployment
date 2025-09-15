@@ -1,0 +1,28 @@
+# flux/images/microservice-a-image-updateautomation.yaml
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: store-front-image-update
+  namespace: flux-system
+spec:
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system      # this must match the GitRepository resource name that points at your GitHub repo
+    namespace: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: santosh-gh
+        email: santosh.mohapatra25@gmail.com
+      signingKeySecretRef:      
+        # optional: sign commits
+        name: ""
+    push:
+      branch: main
+  update:
+    strategy: Setters
+    path: ./clusters/dev/store-front/   # where to search for marked files in the repo
