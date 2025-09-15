@@ -11,9 +11,9 @@ spec:
     name: flux-system      # this must match the GitRepository resource name that points at your GitHub repo
     namespace: flux-system
   git:
-    # checkout:
-    #   ref:
-    #     branch: main
+    checkout:
+      ref:
+        branch: main
     commit:
       author:
         name: santosh-gh

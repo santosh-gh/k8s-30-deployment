@@ -9,4 +9,4 @@ spec:
     name: store-front-image-repo
   policy:
     semver:
-      range: ">=1.0.0 <2.0.0"
+      range: ">=1.0.0"
