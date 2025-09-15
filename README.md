@@ -1,4 +1,4 @@
-# Part 30: Deploying microservice applications in Kubernetes using Flux CD and Helmchart with Image Automation
+# Part 30: Deploying microservice applications in Kubernetes using Helmchart and Flux CD with Image Automation
 
     Part1:   Manual Deployment (AzCLI + Docker Desktop + kubectl)  
     GitHub:  https://github.com/santosh-gh/k8s-01
@@ -255,12 +255,12 @@
 
     GitHub:  https://github.com/santosh-gh/k8s-29-development.git     
     GitHub:  https://github.com/santosh-gh/k8s-29-deployment.git
-    YouTube: https://www.youtube.com/watch?v=NpS63UEO3Bg&list=PLr6ErUeFySVug9VG73_W2MypRez_ZycWh&index=26
+    YouTube: https://www.youtube.com/watch?v=WcY1XZb4_J8&list=PLr6ErUeFySVug9VG73_W2MypRez_ZycWh&index=29
 
     Part30: GitOps using Flux (Microservice + Flux CD + Helm Chart + HelmRepository(ACR) + Image Automation + AKS)             
             Helm Chart with multiple Microservices
             Helm Charts in HelmRepository (Azure Container Registry)
-            Image Automation
+            Flux Image Automation
             OCI
             Private Repository
     GitHub:  https://github.com/santosh-gh/k8s-29-development.git     
@@ -374,12 +374,14 @@
 
   Then create Kubernetes secret:
 
-  k create secret docker-registry acr-helmchart-secret \
+  k create secret docker-registry acr-helmchart-secret2 \
     --namespace=flux-system \
     --docker-server=$ACR_LOGIN_SERVER \
-    --docker-username=$GITHUB_USER \
-    --docker-password=$GITHUB_TOKEN \
-    --docker-email=santosh.mohapatra25@gmail.com  
+    --docker-username=<ACR Name> \
+    --docker-password=<password>
+
+
+
 
   k get secret acr-helmchart-secret -n flux-system -o yaml
 
