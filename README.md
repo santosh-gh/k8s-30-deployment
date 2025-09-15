@@ -447,3 +447,6 @@
 
 # Clean the Azure resources
   az group delete --name rg-onlinestore-dev-uksouth-001 --yes --no-wait
+
+  kubectl -n flux-system logs deploy/flux-image-automation-controller
+
