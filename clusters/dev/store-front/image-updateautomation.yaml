@@ -22,4 +22,4 @@ spec:
       branch: main
   update:
     strategy: Setters
-    path: ./clusters/dev/store-front/   # where to search for marked files in the repo
+    path: ./clusters/dev/store-front/helmrelease.yaml   # where to search for marked files in the repo
