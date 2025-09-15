@@ -22,5 +22,5 @@ spec:
     push:
       branch: main
   update:
-    strategy: Setters
-    path: ./clusters/dev/store-front/   # where to search for marked files in the repo
+    update:
+    path: ./
