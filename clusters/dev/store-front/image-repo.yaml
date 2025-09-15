@@ -8,4 +8,4 @@ spec:
   image: acronlinestoredevuksouth001.azurecr.io/store-front
   interval: 1m
   secretRef:
-    name: acr-helmchart-secret
+    name: acr-helmchart-secret2
