@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: store-front
-      version: "0.1.4"
+      version: "0.1.0"
       sourceRef:
         kind: HelmRepository
         name: online-store-repo
