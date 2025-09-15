@@ -342,6 +342,12 @@
   k get pods -n flux-system
   k get all -n flux-system
 
+  # Delete and re-add with write access
+    kubectl -n flux-system get secret flux-system -o jsonpath='{.data.identity\.pub}' | base64 -d
+
+    Go to the repo - Settings - Deploy keys - Add deploy key.
+    Check Allow write access.
+
   # FluxCD Components
   
   Kustomize Controller - supports managing Kubernetes manifests using Kustomize,
@@ -373,11 +379,9 @@
     --docker-server=$ACR_LOGIN_SERVER \
     --docker-username=$GITHUB_USER \
     --docker-password=$GITHUB_TOKEN \
-    --docker-email=santosh.mohapatra25@gmail.com
+    --docker-email=santosh.mohapatra25@gmail.com  
 
-  
-
-  k get secret acr-helmchart-secret2 -n flux-system -o yaml
+  k get secret acr-helmchart-secret -n flux-system -o yaml
 
 # Build and push Docker images to ACR
 
@@ -444,6 +448,11 @@
 
   kubectl get kustomizations -n flux-system
   flux get kustomizations
+
+# Troubleshooting commands
+  flux get image repository -A
+  flux get image policy -A
+  flux get image update -A
 
 # Verify the Deployment
   k get pods
