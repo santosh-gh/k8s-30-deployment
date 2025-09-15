@@ -22,4 +22,5 @@ spec:
     push:
       branch: main
   update:
-    path: ./clusters
+    strategy: Setters
+    path: ./clusters/dev/store-front/
